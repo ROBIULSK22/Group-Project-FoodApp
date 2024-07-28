@@ -90,7 +90,13 @@ body {
     transform: translateY(-50%); /* Adjusted transform to center vertically */
     font-size: 20px;
     color: black; /* Ensured icon color is white */
+    transition: color 0.3s ease, transform 0.3s ease; /* Add transition for smooth effect */
 
+
+}
+.input-box i:hover{
+    color: #ffffff; /* Change the color on hover */
+    transform: scale(1.1) translateY(-50%); /* Slightly increase the size on hover without changing the vertical position */
 }
 
 .rember-forgot {
@@ -98,6 +104,7 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+   
 }
 
 .btn {
@@ -119,7 +126,12 @@ body {
 
 .create_ac{
     text-decoration: none;/*remove underline*/
+    color: #EAA401;
+   
     
+}
+.create_ac:hover {
+    color: #FFFFFF; /* Change this to the desired hover color */
 }
 
 
