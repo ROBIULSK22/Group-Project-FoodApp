@@ -6,8 +6,10 @@ import About from "./components/Navber/About/About";
 import Login from "./components/Navber/Login/Login";
 import Navber from "./components/Navber/Navber";
 import "./App.css";
+import '@fortawesome/fontawesome-free/css/all.min.css'; // Import Font Awesome CSS
 
 function App() {
+    
   return (
     <>
       <BrowserRouter>
