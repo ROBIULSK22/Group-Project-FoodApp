@@ -37,8 +37,8 @@ class Signup extends Component {
             <div className={styles.reg}>
               <center>
                 <p>
-                  or{" "}
-                  <Link to="/login" className={styles["create_ac"]}>
+                <span className={styles["or-text"]}>or</span>{" "}  {/* Wrapped 'or' in a span with class 'or-text' */}
+                  <Link to="/Login" className={styles["create_ac"]}>
                     log in to your account
                   </Link>
                 </p>
