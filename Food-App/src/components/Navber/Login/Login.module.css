@@ -23,7 +23,7 @@ html, body {
 
 .loginpagebg {
     border: 2px solid black;
-    background-image: url('D:/Mern Project/Group-Project-FoodApp/Food-App/src/assets/Eggburgerr.png');
+    background-image: url('/src/assets/Eggburgerr.png');
     width: 100vw;
     height: 100vh;
     align-items: center;
