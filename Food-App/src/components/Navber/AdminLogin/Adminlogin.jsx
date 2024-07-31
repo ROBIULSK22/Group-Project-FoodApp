@@ -1,10 +1,9 @@
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { userContext } from "../../../App";
-
-function Login() {
+import { useContext } from "react";
+function Adminlogin() {
   const navigate = useNavigate();
-  const {user,setUser} = useContext(userContext)
+  const { user, setUser } = useContext(userContext);
   const getData = (event) => {
     event.preventDefault();
     const data = new FormData(event.target);
@@ -13,24 +12,22 @@ function Login() {
       password: data.get("password"),
     };
     //Create code for calling Api and Api will return userId, useraddres
-    const result = {
-      userid: data.get("userid"),
-      address: "mumbai",
-      orderid: "No oder yet",
-    };
+    const result = True;
     setUser(result);
-    navigate("/Home");
+    navigate("/Admin");
   };
-  return (
+
+  return(
     <>
+    <h1>This is admin login page
+
+    </h1>
       <form onSubmit={getData}>
         <input type="text" name="userid" />
         <input type="password" name="password" />
         <button type="submit">Login</button>
       </form>
-      <a href="/Adminlogin">Not a user?</a>
     </>
   );
 }
-
-export default Login;
+export default Adminlogin;
