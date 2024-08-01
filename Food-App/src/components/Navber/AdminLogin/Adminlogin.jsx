@@ -12,7 +12,7 @@ function Adminlogin() {
       password: data.get("password"),
     };
     //Create code for calling Api and Api will return userId, useraddres
-    const result = True;
+    const result = true;
     setUser(result);
     navigate("/Admin");
   };

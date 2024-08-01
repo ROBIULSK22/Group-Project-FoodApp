@@ -13,7 +13,7 @@ function Home() {
       capsicum:data.get("capsicum"),
       margherita:data.get("margherita"),
       onion:data.get("onione"),
-      userAddress:user.address,
+      address:user.address,
       totalAmount:data.get("cheesandcorn")*110+data.get("capsicum")*90+data.get("margherita")*120+data.get("onione")*300,
   
     };
