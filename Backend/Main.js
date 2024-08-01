@@ -8,7 +8,17 @@ const userDetails = new mongoose.Schema({
     password:String,
     address:String,
 });
+const orderdetails = new mongoose.Schema({
+    userid:String,
+    cheesandcorn:Number,
+    capsicum:Number,
+    margherita:Number,
+    onion:Number,
+    address:String,
+    totalamount:Number,
+})
 const details = mongoose.model("userDetails",userDetails);
+const odetails = mongoose.model("orderdetails",orderdetails);
 const app = express();
 app.use(cors())
 app.use(express.urlencoded({extended:true}))
@@ -37,5 +47,16 @@ app.post("/checklogin",(req,res)=>{
             res.send(false)
         }
     }).catch((err)=>console.log(err));
+})
+app.post("/placeorder",(req,res)=>{
+    odetails.create({
+    userid:req.body.userid,
+    cheesandcorn:req.body.cheesandcorn,
+    capsicum:req.body.capsicum,
+    margherita:req.body.margherita,
+    onion:req.body.onion,
+    address:req.body.address,
+    totalamount:req.body.totalamount,
+    }).then((data)=>res.json({orderid:data._id.toString()})).catch((err)=>res.json({mesg:"Order did not place, Please Try again"})); 
 })
 app.listen(3000);
