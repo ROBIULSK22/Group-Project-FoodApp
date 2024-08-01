@@ -16,7 +16,7 @@ function Login() {
     //Create code for calling Api and Api will return userId, useraddres
     fetch("http://localhost:3000/checklogin",{
       method:"post",body: JSON.stringify(senddata),headers:{"Content-type":"application/json"}
-    }).then((res)=>res.json()).then((d)=>{console.log(d.address)
+    }).then((res)=>res.json()).then((d)=>{
       if(d){
         const result = {
           userid: d.userid,

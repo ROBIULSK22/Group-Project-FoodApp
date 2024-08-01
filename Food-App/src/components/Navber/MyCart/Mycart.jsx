@@ -4,20 +4,28 @@ import { useContext } from "react";
 function Mycart() {
   const { user, setUser } = useContext(userContext);
   const navigate = useNavigate();
-  function placeOrder(){
+  function placeOrder() {
     // i will try to create api and send data to the database
-    const result = {
-      userid:user.userid,
-      address:user.userAddress,
-      orderid:"3934349",
-    }
-    setUser(result);
-    navigate("/Home");
+    fetch("http://localhost:3000/placeorder", {
+      method: "post",
+      body: JSON.stringify(user),
+      headers: { "Content-type": "application/json" },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const result = {
+          userid: user.userid,
+          address: user.address,
+          orderid: data.orderid,
+        };
+        setUser(result);
+        navigate("/Home");
+      })
+      .catch((err) => console.log(err));    
   }
 
   return (
     <>
-      <h1>{console.log(user)}</h1>
       <table>
         <tbody>
           <tr>
@@ -42,7 +50,7 @@ function Mycart() {
           </tr>
           <tr>
             <td>Address:</td>
-            <td>{user.userAddress}</td>
+            <td>{user.address}</td>
           </tr>
           <tr>
             <td>TotalAmount:</td>
