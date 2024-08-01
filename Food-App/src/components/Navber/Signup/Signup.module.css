@@ -1,0 +1,115 @@
+.mainbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background: url('/src/assets/bg4.jpg');
+    background-size: cover;
+    background-position: center;
+    
+}    
+
+.wrapper {
+    width: 450px;
+    padding: 20px; /* Added padding for better spacing */
+    background:transparent;
+    border: 2px solid rgba(255, 255, 255, 0.582);
+    color: rgb(0, 0, 0);
+    border-radius: 10px; /* Added border radius for better appearance */
+    backdrop-filter: blur(5px);
+    box-shadow: 0 20px 30px rgba(4, 239, 247, 0.548);
+   
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.wrapper h1:hover {
+    color: #24380f;
+    /* Change the color on hover */
+    transform: scale(1.1);
+    /* Slightly increase the size on hover */
+}
+
+.wrapper .input-box {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 95%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid #2d5304c2;
+    border-radius: 40px;
+    padding-left: 15px; /* Added padding for better spacing inside input */
+    color:rgb(255, 255, 255);
+    font-size: 16px; 
+    font-weight: 600;
+    
+}
+
+.input-box input::placeholder {
+    color: rgb(0, 0, 0);
+}
+
+.input-box i {
+    position: absolute;
+    right: 30px;
+    top: 50%; /* Centered the icon vertically */
+    transform: translateY(-50%); /* Adjusted transform to center vertically */
+    font-size: 20px;
+    color: black; /* Ensured icon color is white */
+    transition: color 0.3s ease, transform 0.3s ease;
+
+}
+.input-box i:hover {
+    color: #ffffff;
+    /* Change the color on hover */
+    transform: scale(1.1) translateY(-50%);
+    /* Slightly increase the size on hover without changing the vertical position */
+}
+
+.rember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: #487502;
+    border: none;
+    border-radius: 40px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #E9BE62;
+}
+
+.create_ac{
+    text-decoration: none;
+    color: aliceblue;
+    
+}
+.create_ac:hover {
+    color: #08c0ee;
+    /* Change this to the desired hover color */
+}
+.or-text {
+    color: #5a8deb; /* Change this to your desired color */
+}
