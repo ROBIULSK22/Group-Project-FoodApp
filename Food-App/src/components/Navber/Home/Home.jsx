@@ -23,6 +23,7 @@ function Home() {
     setUser(senddata);
     navigate("/Mycart");
   };
+
   if (user) {
     return (
       <>

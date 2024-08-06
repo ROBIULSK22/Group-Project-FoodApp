@@ -6,7 +6,7 @@ function Mycart() {
   const navigate = useNavigate();
   function placeOrder() {
     // i will try to create api and send data to the database
-    fetch("http://localhost:3000/placeorder", {
+    fetch("http://localhost:4000/placeorder", {
       method: "post",
       body: JSON.stringify(user),
       headers: { "Content-type": "application/json" },

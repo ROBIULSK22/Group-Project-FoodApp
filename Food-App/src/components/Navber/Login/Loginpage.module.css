@@ -1,42 +1,48 @@
 .loginwrapper {
-  border: 2px solid black;
+  background-image: url('/src/assets/bg1.jpg');
   display: flex;
   align-items: center;
   justify-content: center;
+  background-size: cover;
+  width: 100%;
   height: 100vh;
 }
 .pageContent {
-    border: 2px solid black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 54%;
-    width: 25%;
-  }
-  .line{
-    border: 2px solid black;
-    width: 80%;
-    margin: 20px 0;
-  }
+ background-image: url('/src/assets/bg2.jpg');
+ background-size: cover;
+ background-position: center;
+ box-shadow: 2px 2px 4px 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 54%;
+  width: 25%;
+}
+.line {
+  border: 2px solid black;
+  width: 80%;
+  margin: 20px 0;
+}
 .formContent {
   margin: 40px 0;
   width: 80%;
   line-height: 25px;
   text-align: center;
 }
-.formContent input{
-    border-top:none;
-    border-left: none;
-    border-right: none;
-    width: 100%;
+.formContent input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  height: 20px;
+  background-color: cadetblue;
 }
-.formContent button{
-    margin: 20px 0;
-    width: 54px;
-    height: 25px;
-    font-weight: 600;
- 
+.formContent button {
+  margin: 20px 0;
+  border-radius: 10px;
+  width: 100%;
+  height: 25px;
+  font-weight: 600;
 }
-.pageContent a{
-    
+.pageContent a {
 }

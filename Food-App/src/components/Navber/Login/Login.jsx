@@ -14,7 +14,7 @@ function Login() {
       password: data.get("password"),
     };
     //Create code for calling Api and Api will return userId, useraddres
-    fetch("http://localhost:3000/checklogin",{
+    fetch("http://localhost:4000/checklogin",{
       method:"post",body: JSON.stringify(senddata),headers:{"Content-type":"application/json"}
     }).then((res)=>res.json()).then((d)=>{
       if(d){
@@ -41,7 +41,7 @@ function Login() {
         <div className={Styles.formContent}>
           <form onSubmit={getData}>
             <br />
-            <input type="text" name="userid" placeholder="Username" required />
+            <input type="text" name="userid" placeholder="UserName" required />
             <br />
             <br />
             <input

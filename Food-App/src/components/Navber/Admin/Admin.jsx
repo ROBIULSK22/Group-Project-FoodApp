@@ -3,10 +3,16 @@ import { userContext } from "../../../App";
 
 function Admin() {
   const { user, setUser } = useContext(userContext);
-  const [data, setData] = useState([{ column1: "No Data", column2: "No Data" }]);
+  const [data, setData] = useState([
+    { column1: "No Data", column2: "No Data" },
+  ]);
 
   function fetchData() {
-    console.log("Fetching data");
+    fetch("http://localhost:4000/getOrders")
+      .then((res) => res.json())
+      .then((mydata) =>setData(mydata))
+      .catch((err) => console.log(err));
+
     // Add logic to fetch data here
   }
 

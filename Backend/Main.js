@@ -17,8 +17,14 @@ const orderdetails = new mongoose.Schema({
     address:String,
     totalamount:Number,
 })
+const admindetails = new mongoose.Schema({
+    userid:String,
+    password:String,
+});
+
 const details = mongoose.model("userDetails",userDetails);
 const odetails = mongoose.model("orderdetails",orderdetails);
+const adetails = mongoose.model("admindetails",admindetails);
 const app = express();
 app.use(cors())
 app.use(express.urlencoded({extended:true}))
@@ -59,4 +65,26 @@ app.post("/placeorder",(req,res)=>{
     totalamount:req.body.totalamount,
     }).then((data)=>res.json({orderid:data._id.toString()})).catch((err)=>res.json({mesg:"Order did not place, Please Try again"})); 
 })
-app.listen(3000);
+app.post("/Adminlogin",(req,res)=>{
+    const uid = req.body.userid;
+    const pwd = req.body.password;
+
+    adetails.findOne({"userid":uid}).then((mydata)=>{
+        if(mydata){
+            if(pwd == mydata.password){
+                res.json({Mesg:"Login Successfull"})
+            }
+            else{
+                res.send(false)
+            }
+        }else{
+            res.send(false)
+        }
+    }).catch((err)=>console.log(err));
+    
+})
+app.get("/getOrders",(req,res)=>{
+    odetails.find().then((mydata)=>res.send(mydata)).catch((err)=>console.log(err));
+})
+
+app.listen(4000);

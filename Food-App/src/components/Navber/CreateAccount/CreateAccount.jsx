@@ -11,7 +11,7 @@ function CreateAccount() {
       address: data.get("address"),
     };
     //create code for calling Api and api will return register successfull
-    fetch("http://localhost:3000/createAccount",{
+    fetch("http://localhost:4000/createAccount",{
       method:"post",body: JSON.stringify(senddata),headers:{"Content-type":"application/json"}
     }).then((res)=>res.json()).then((d)=>updateData(d)).catch((err)=>console.log(err));
     
